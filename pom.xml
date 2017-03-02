@@ -76,17 +76,15 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.2.3</version>
 				<configuration>
-					<baseImage>ewolff/docker-java</baseImage>
-					<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-					<cmd>/usr/bin/java -Xmx400m -Xms400m -jar ${project.build.finalName}.jar</cmd>
-					<entryPoint>/usr/bin/java -Xmx400m -Xms400m -jar ${project.build.finalName}.jar</entryPoint>
-					<resources>
-						<resource>
-							<targetPath>/</targetPath>
-							<directory>${project.build.directory}</directory>
-							<include>${project.build.finalName}.jar</include>
-						</resource>
-					</resources>
+                <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                <dockerDirectory>.</dockerDirectory>
+                <resources>
+                    <resource>
+                        <targetPath>/</targetPath>
+                        <directory>${project.build.directory}</directory>
+                        <include>${project.build.finalName}.jar</include>
+                    </resource>
+                </resources>
 				</configuration>
 			</plugin>
 			<plugin>
