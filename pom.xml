@@ -6,7 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 	<groupId>com.ms-example</groupId>
-	<artifactId>microservice-demo-eureka-server</artifactId>
+	<artifactId>eureka</artifactId>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
