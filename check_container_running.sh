@@ -25,8 +25,7 @@ if [ "$RUNNING" == "false" ]; then
   echo "CRITICAL - $CONTAINER is not running."
 fi
 
-STARTED=$(docker inspect --format="{{ .State.StartedAt }}" $CONTAINER)
-NETWORK=$(docker inspect --format="{{ .NetworkSettings.IPAddress }}" $CONTAINER)
-
-echo "OK - $CONTAINER is running. IP: $NETWORK, StartedAt: $STARTED"
-docker stop eureka
+if [ "$RUNNING" == "false" ]; then
+  echo "$CONTAINER is running"
+  docker stop eureka
+fi 
