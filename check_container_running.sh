@@ -23,9 +23,10 @@ fi
 
 if [ "$RUNNING" == "false" ]; then
   echo "CRITICAL - $CONTAINER is not running."
+  docker rm eureka
 fi
 
-if [ "$RUNNING" == "false" ]; then
+if [ "$RUNNING" == "true" ]; then
   echo "$CONTAINER is running"
   docker stop eureka
 fi 
